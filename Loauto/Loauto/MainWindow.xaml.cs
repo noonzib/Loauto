@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loauto.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Loauto
         public MainWindow()
         {
             InitializeComponent();
+        }
+        NetworkManager Network = new NetworkManager();
+
+        private void test_Click(object sender, RoutedEventArgs e)
+        {
+            Network.RequestEventList();
         }
     }
 }
