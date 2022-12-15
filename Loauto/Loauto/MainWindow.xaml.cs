@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Loauto.Model.NetworkModel;
 
 namespace Loauto
 {
@@ -29,7 +30,7 @@ namespace Loauto
 
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            Network.RequestEventList();
+            Network.SendRequest(RESTAPI.Characters,"눈집이");
         }
     }
 }

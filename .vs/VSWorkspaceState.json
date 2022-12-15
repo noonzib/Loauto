@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Loauto",
+    "\\Loauto\\Loauto"
   ],
+  "SelectedNode": "\\Loauto\\Loauto\\MainWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
