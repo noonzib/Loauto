@@ -12,7 +12,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="눈집이" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+        <TextBlock x:Name="CharacterNameTextBlock" Style="{StaticResource MaterialDesignHeadline4TextBlock}" Text="눈집이" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,0,8" >
             <TextBox x:Name="UserNameBox"
                 materialDesign:HintAssist.Hint="Character Name"
@@ -36,7 +36,7 @@
                             <RowDefinition Height="*"/>
 
                         </Grid.RowDefinitions>
-                        <StackPanel Orientation="Horizontal" Margin="4,0,4,8">
+                        <StackPanel x:Name="InfoPanel" Orientation="Horizontal" Margin="4,0,4,8">
                             <materialDesign:Chip Content="아르카나" Style="{StaticResource MaterialDesignOutlineChip}" />
                             <materialDesign:Chip Content="카제로스" Style="{StaticResource MaterialDesignOutlineChip}" />
                             <materialDesign:Chip Content="아이템 레벨: 1595" Style="{StaticResource MaterialDesignOutlineChip}" />
@@ -66,17 +66,17 @@
                                     <GroupBox
                                         Header="특성" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,0,8">
                                         <UniformGrid x:Name="StatsPanel" Columns="3">
-                                            <materialDesign:Chip Content="치명: 646" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            <materialDesign:Chip Content="특화: 1787" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            <materialDesign:Chip Content="신속: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            <materialDesign:Chip Content="제압: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            <materialDesign:Chip Content="인내: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                            <materialDesign:Chip Content="숙련: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="CriticalChip" Content="치명: 646" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="SpecializationChip" Content="특화: 1787" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="SwiftnessChip" Content="신속: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="SubdueChip" Content="제압: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="EnduranceChip" Content="인내: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <materialDesign:Chip x:Name="PracticeChip" Content="숙련: 46" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </UniformGrid>
                                     </GroupBox>
                                     <GroupBox
                                         Header="성향" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="2" Margin="8,0,0,8">
-                                        <UniformGrid x:Name="StatsPanel1" Columns="2">
+                                        <UniformGrid x:Name="TendencePanel" Columns="2">
                                             <materialDesign:Chip Content="지성: 338" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                             <materialDesign:Chip Content="담력: 321" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                             <materialDesign:Chip Content="매력: 263" Style="{StaticResource MaterialDesignOutlineChip}" HorizontalAlignment="Center" VerticalAlignment="Center" />
@@ -85,7 +85,7 @@
                                     </GroupBox>
                                 </Grid>
                                 <GroupBox
-                                    Header="보석" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,0,0,8">
+                                    Header="보석" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,0,0,8" MinHeight="100">
                                     <UniformGrid x:Name="GemPanel" VerticalAlignment="Center" Rows="1">
                                         <CustomControl:GemControl  MaxHeight="80"/>
                                         <CustomControl:GemControl  MaxHeight="80"/>
@@ -115,12 +115,18 @@
                                             <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
                                             <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
                                             <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
+                                            <CustomControl:EquipmentControl MaxHeight="100" Margin="8"/>
                                         </UniformGrid>
                                     </GroupBox>
                                     <GroupBox
-                                        Header="카드" FontWeight="SemiBold" Grid.Column="1" Margin="4,0,0,0">
+                                        Header="카드" FontWeight="SemiBold" Grid.Column="1" Margin="4,0,0,0" VerticalAlignment="Top">
                                         <Grid>
-                                            <ListBox MaxHeight="200"
+                                            <ListBox x:Name="CardEffectList" 
     materialDesign:ListBoxItemAssist.ShowSelection="False" VerticalAlignment="Top">
                                                 <TextBlock Text="세상을 구하는 빛 2세트 - 암속성 피해 감소 +10.00%" />
                                                 <TextBlock Text="세상을 구하는 빛 4세트 - 암속성 피해 감소 +10.00%" />

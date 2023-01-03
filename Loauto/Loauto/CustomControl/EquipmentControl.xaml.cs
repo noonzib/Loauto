@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Loauto.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace Loauto.CustomControl
     /// </summary>
     public partial class EquipmentControl : UserControl
     {
+        //private ArmoriesResponseModel.EquipmentModel item;
+
         public EquipmentControl()
         {
             InitializeComponent();
+        }
+
+        public EquipmentControl(ArmoriesResponseModel.EquipmentModel item)
+        {
+            InitializeComponent();
+            //this.item = item;
+            this.DataContext = item;
         }
     }
 }

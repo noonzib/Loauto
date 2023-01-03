@@ -38,13 +38,13 @@ namespace Loauto.ViewModel
         {
             NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Profiles, name);
             NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Equipment, name);
-            NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Avatars, name);
-            NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.CombatSkills, name);
+            //NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Avatars, name);
+            //NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.CombatSkills, name);
             NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Engravings, name);
             NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Cards, name);
             NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Gems, name);
-            NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Colosseums, name);
-            NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Collectibles, name);
+            //NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Colosseums, name);
+            //NetworkManager.Singleton.SendRequest(Model.NetworkModel.RESTAPI.Collectibles, name);
 
         }
     }

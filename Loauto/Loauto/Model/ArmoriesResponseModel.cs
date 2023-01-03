@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loauto.Model
 {
-    class ArmoriesResponseModel
+    public class ArmoriesResponseModel
     {
         public class ArmoryProfileModel
         {
