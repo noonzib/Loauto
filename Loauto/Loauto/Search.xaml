@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Loauto.Search"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Loauto"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="900" d:DesignWidth="1600">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" >
+            <TextBox x:Name="UserNameBox"
+  materialDesign:HintAssist.Hint="Character Name"
+  materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+  materialDesign:HintAssist.FloatingScale="0.50"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  FontSize="24" Margin="0,0,24,0" MinWidth="260" MaxWidth="260" />
+            <Button Style="{StaticResource MaterialDesignFloatingActionDarkButton}" ToolTip="Search" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Width="52" Height="52" VerticalAlignment="Bottom" 
+                    Command="{Binding RequestNetworkCommand}" CommandParameter="{Binding ElementName=UserNameBox, Path=Text}">
+                <materialDesign:PackIcon Kind="Magnify" Width="32" Height="32" />
+            </Button>
+        </StackPanel>
+        <local:Profile d:IsHidden="True"/>
+    </Grid>
+</UserControl>

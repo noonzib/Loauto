@@ -11,13 +11,16 @@ namespace Loauto.Model
         public class ArmoryProfileModel
         {
             public string CharacterImage { get; set; }
-            public string ExpeditionLevel { get; set; }
+            public int ExpeditionLevel { get; set; }
             public string PvpGradeName { get; set; }
-            public string TownLevel { get; set; }
+            public int TownLevel { get; set; }
             public string TownName { get; set; }
             public string Title { get; set; }
             public string GuildMemberGrade { get; set; }
             public string GuildName { get; set; }
+            public int UsingSkillPoint { get; set; }
+            public int TotalSkillPoint { get; set; }
+
             public StatsModel[] Stats { get; set; }
             public TendenciesModel[] Tendencies{ get; set; }
             public string ServerName { get; set; }

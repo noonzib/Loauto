@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,12 +29,29 @@ namespace Loauto
         public MainWindow()
         {
             InitializeComponent();
+
+            Task.Factory.StartNew(() => Thread.Sleep(2500)).ContinueWith(t =>
+            {
+                //note you can use the message queue from any thread, but just for the demo here we 
+                //need to get the message queue from the snackbar, so need to be on the dispatcher
+                MainSnackbar.MessageQueue?.Enqueue("Welcome to Spring Rain");
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
+
+            DataContext = new MainWindowViewModel();
+            this.KeyUp += MainWindow_KeyUp;
         }
-        NetworkManager Network = new NetworkManager();
+
+        private void MainWindow_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Network.SendRequest(RESTAPI.Characters, "눈집이");
+        }
+
+        //NetworkManager Network = new NetworkManager();
 
         private void test_Click(object sender, RoutedEventArgs e)
         {
-            Network.SendRequest(RESTAPI.Characters,"눈집이");
+            //Network.SendRequest(RESTAPI.Characters,"눈집이");
         }
 
         private void UIElement_OnPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

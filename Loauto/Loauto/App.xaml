@@ -6,9 +6,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <materialDesign:CustomColorTheme BaseTheme="Dark" PrimaryColor="#ffffbfca" SecondaryColor="DarkGreen" />
+                <materialDesign:CustomColorTheme BaseTheme="Dark" PrimaryColor="#ffF9B5D0" SecondaryColor="DarkGreen" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type Window}">
+                <Setter Property="FontFamily" Value="/Loauto;component/Font/Noto_Sans_KR/#Noto Sans KR" />
+            </Style>
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

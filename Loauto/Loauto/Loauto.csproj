@@ -99,11 +99,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomControl\EquipmentControl.xaml.cs">
+      <DependentUpon>EquipmentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\GemControl.xaml.cs">
+      <DependentUpon>GemControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\ArmoriesResponseModel.cs" />
     <Compile Include="Model\CharactersResponseModel.cs" />
+    <Compile Include="Model\MenuItemModel.cs" />
     <Compile Include="Model\NetworkModel.cs" />
     <Compile Include="Model\NewsResponseModel.cs" />
+    <Compile Include="Model\ViewModelBase.cs" />
+    <Compile Include="Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\Commands\NetworkCommand.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\NetworkManager.cs" />
+    <Compile Include="ViewModel\ReceiveResponseEventArgs.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Page Include="CustomControl\EquipmentControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControl\GemControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -116,6 +149,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -135,6 +176,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Black.otf" />
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Bold.otf" />
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Light.otf" />
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Medium.otf" />
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Regular.otf" />
+    <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Thin.otf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -144,7 +191,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Font\Noto_Sans_KR\OFL.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

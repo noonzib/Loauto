@@ -26,6 +26,21 @@ namespace Loauto.ViewModel
         public string ApiKey { get => apiKey; }
         internal Dictionary<RESTAPI, MethodModel> MethodDictionary { get => methodDictionary; set => methodDictionary = value; }
 
+        private static NetworkManager singleton = null;
+        public static NetworkManager Singleton
+        {
+            get
+            {
+                if (singleton == null)
+                {
+                    singleton = new NetworkManager();
+                }
+                return singleton;
+            }
+        }
+
+        public event EventHandler<ReceiveResponseEventArgs> ReceivedResponse;
+
         public NetworkManager()
         {
             InitDefaultHeaders();
@@ -58,14 +73,12 @@ namespace Loauto.ViewModel
             MethodDictionary.Add(RESTAPI.MarketItem, new MethodModel() { RequestMethod = RequestType.GET, Category = APICategory.Markets, Url = "markets/items/{0}" });
             MethodDictionary.Add(RESTAPI.MarketItems, new MethodModel() { RequestMethod = RequestType.POST, Category = APICategory.Markets, Url = "markets/items" });
         }
-
         private void InitDefaultHeaders()
         {
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Add("authorization", $"{ApiKey}");
             client.BaseAddress = new Uri("https://developer-lostark.game.onstove.com/");
         }
-
         public async Task RequestEventList() {
             var response = await client.GetAsync("news/events");
 
@@ -74,7 +87,7 @@ namespace Loauto.ViewModel
             Console.WriteLine(responseBody);
         }
 
-        public async Task<object> SendRequest(RESTAPI api, string subpath=null, List<KeyValuePair<string, string>> urlParameter=null, object parameter=null)
+        public async Task SendRequest(RESTAPI api, string subpath=null, List<KeyValuePair<string, string>> urlParameter=null, object parameter=null)
         {
             var sendmodel = MethodDictionary[api];
             string path = sendmodel.Url;
@@ -90,12 +103,13 @@ namespace Loauto.ViewModel
 
             string responseBody = await response.Content.ReadAsStringAsync();
 
+            Console.WriteLine(response.RequestMessage);
             Console.WriteLine(responseBody);
             var result = JsonSerializer.Deserialize(responseBody, sendmodel.ResponseType);
 
-            return result;
+            ReceivedResponse(this, new ReceiveResponseEventArgs(api, sendmodel, result ));
+            //return result;
         }
-
             
         // 타입과 메소드를 연결
         // 메소드와 URL를 연결

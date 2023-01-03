@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Loauto.Model
 {
-    class NetworkModel
+    public class NetworkModel
     {
         public enum APICategory
         {
