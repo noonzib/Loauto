@@ -37,6 +37,11 @@ namespace Loauto.ViewModel
                     "Engravings",
                     typeof(Home)
                 ),
+
+                new MenuItemModel(
+                    "TODO",
+                    typeof(TodoList)
+                ),
             });
 
 
