@@ -9,10 +9,16 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <DataGrid
-  ItemsSource="{Binding Items2}"
-  CanUserAddRows="False"
-  SelectionUnit="Cell"
-  SelectionMode="Extended" />
+        <DataGrid ItemsSource="{Binding Items1}" CanUserAddRows="False" AutoGenerateColumns="False" HeadersVisibility="All" SelectionUnit="{Binding ElementName=selectionUnitComboBox, Path=SelectedValue}">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="dkdkdkdkdkd" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                </DataGridCheckBoxColumn>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
+                <DataGridCheckBoxColumn Header="dkdkdkdkdkd" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
+                <DataGridCheckBoxColumn Header="dkdkdkdkdkd" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
+                <DataGridCheckBoxColumn Header="dkdkdkdkdkd" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
+                <DataGridCheckBoxColumn Header="dkdkdkdkdkd" Binding="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}" EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

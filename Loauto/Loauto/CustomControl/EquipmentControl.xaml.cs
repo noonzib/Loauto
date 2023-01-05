@@ -1,4 +1,5 @@
 ﻿using Loauto.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,14 @@ namespace Loauto.CustomControl
             InitializeComponent();
             //this.item = item;
             this.DataContext = item;
+            string tooltip = item.Tooltip;
+            tooltip = tooltip.Replace("\r\n","").Replace("\r\n", "\\\"");
+            var jobject = JObject.Parse(tooltip);
+            var quailty = jobject["Element_001"]["value"]["qualityValue"];
+            Console.WriteLine(tooltip);
+            Console.WriteLine(quailty);
+            QualityProgress.Value = (int)quailty;
+            QualityTextBlock.Text = (string)quailty;
         }
     }
 }
