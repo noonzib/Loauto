@@ -39,8 +39,9 @@ namespace Loauto.ViewModel
                 ),
 
                 new MenuItemModel(
-                    "TODO",
-                    typeof(TodoList)
+                    "WeeklyTaskManager",
+                    typeof(WeeklyTaskManager),
+                    new WeeklyTaskManagerViewModel()
                 ),
             });
 

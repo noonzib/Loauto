@@ -121,14 +121,16 @@
     <Compile Include="Model\NewsResponseModel.cs" />
     <Compile Include="Model\TooltipModel.cs" />
     <Compile Include="Model\ViewModelBase.cs" />
+    <Compile Include="Model\WeeklyItemModel.cs" />
     <Compile Include="Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
     <Compile Include="Search.xaml.cs">
       <DependentUpon>Search.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TodoList.xaml.cs">
-      <DependentUpon>TodoList.xaml</DependentUpon>
+    <Compile Include="ViewModel\WeeklyTaskManagerViewModel.cs" />
+    <Compile Include="WeeklyTaskManager.xaml.cs">
+      <DependentUpon>WeeklyTaskManager.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\Commands\NetworkCommand.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -171,7 +173,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TodoList.xaml">
+    <Page Include="WeeklyTaskManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
