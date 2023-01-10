@@ -196,6 +196,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Setting\Header.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Black.otf" />
     <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Bold.otf" />
     <Resource Include="Font\Noto_Sans_KR\NotoSansKR-Light.otf" />

@@ -9,4 +9,15 @@ namespace Loauto.Model
     class WeeklyItemModel
     {
     }
+
+    class WeeklyItemHeadersModel
+    {
+        public List<WeeklyItemHeaderModel> Headers { get; set; }
+    }
+
+    class WeeklyItemHeaderModel
+    {
+        public string Header { get; set; }
+        public string HeaderType { get; set; }
+    }
 }
