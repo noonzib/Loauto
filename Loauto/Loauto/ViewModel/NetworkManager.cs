@@ -20,7 +20,7 @@ namespace Loauto.ViewModel
         private Dictionary<RESTAPI, MethodModel> methodDictionary;
 
         #region APIKEY
-        private static string _JWT = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyIsImtpZCI6IktYMk40TkRDSTJ5NTA5NWpjTWk5TllqY2lyZyJ9.eyJpc3MiOiJodHRwczovL2x1ZHkuZ2FtZS5vbnN0b3ZlLmNvbSIsImF1ZCI6Imh0dHBzOi8vbHVkeS5nYW1lLm9uc3RvdmUuY29tL3Jlc291cmNlcyIsImNsaWVudF9pZCI6IjEwMDAwMDAwMDAwMDEwNTYifQ.aFP_eLbMioC4npamlJn-e9PmjCNccORHiec09TGP4CxsJNti-kpd68T5wdDoAnUn9dy7cAUBcRj886AVNep5vwknjUdLOoQRBWgc9DoKFelB8uAXUotZhPwdyhzXe0vVtstpl_KTCO61BR87wuDEqddwDbJYueHzoOkKAwqLr5-aaygiCGo3msfbv_F5ZMON-FNJGVmMPP1UxoPmvtFsPaCIWmGe5hXJ-8K5ekW6270wyjw48uGOGekjKjQJROrBuiJl5THZExq3u-Q2Yboik4l2FOs_bKNezx4E7P1Af2uWFpu9NPDJ3kjBiWMHkEDSfy2qtAnJo3T2o5b0ZWu_nw";
+        private static string _JWT = "xxxxxxxxxxxxxxx";
         private string apiKey = $"bearer {_JWT}";
         #endregion
         public string ApiKey { get => apiKey; }
